@@ -1,8 +1,8 @@
 #gameboard {
-  background-color: blue;
+  /*background-color: blue;*/
   margin: auto;
   height: 400px;
-  width: 400px;
+  width: 800px;
   text-align: center;
 }
 
@@ -13,9 +13,49 @@ ul {
   margin-top: 20px;
 }
 
-.tile {
-  width: 100px;
-  height: 100px;
+ul li {
+  width: 20px;
+  height: 20px;
   background-color: red;
   display: inline-block;
+}
+
+.bonus {
+ background-color: blue;
+}
+
+.win {
+  background-color: green;
+}
+
+.player {
+  background-color: yellow;
+}
+
+p {
+  border: 2px dotted black;
+  height: 80px;
+  width: 100px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.topWall {
+  background-color: black;
+}
+
+.bottomWall {
+  background-color: black;
+}
+
+.leftWall {
+  background-color: black;
+}
+
+.rightWall {
+  background-color: black;
+}
+
+.wall {
+  background-color: black;
 }
