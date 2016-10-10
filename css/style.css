@@ -55,6 +55,69 @@ img {
  border-bottom-right-radius: 10px;
 }
 
+/*.pacmanRight {
+  background-color: white;
+  width: 0px;
+ height: 0px;
+ border-right: 10px solid transparent;
+ border-top: 10px solid yellow;
+ border-left: 10px solid yellow;
+ border-bottom: 10px solid yellow ;
+ border-top-left-radius: 10px;
+ border-top-right-radius: 10px;
+ border-bottom-left-radius: 10px;
+ border-bottom-right-radius: 10px;
+}
+
+.pacmanLeft {
+  background-color: white;
+  width: 0px;
+ height: 0px;
+ border-right: 10px solid yellow;
+ border-top: 10px solid yellow;
+ border-left: 10px solid transparent;
+ border-bottom: 10px solid yellow ;
+ border-top-left-radius: 10px;
+ border-top-right-radius: 10px;
+ border-bottom-left-radius: 10px;
+ border-bottom-right-radius: 10px;
+}
+
+.pacmanUp {
+  background-color: white;
+  width: 0px;
+ height: 0px;
+ border-right: 10px solid yellow;
+ border-top: 10px solid transparent;
+ border-left: 10px solid yellow;
+ border-bottom: 10px solid yellow ;
+ border-top-left-radius: 10px;
+ border-top-right-radius: 10px;
+ border-bottom-left-radius: 10px;
+ border-bottom-right-radius: 10px;
+}
+
+.pacmanDown {
+    background-color: white;
+    width: 0px;
+   height: 0px;
+   border-right: 10px solid yellow;
+   border-top: 10px solid yellow;
+   border-left: 10px solid yellow;
+   border-bottom: 10px solid transparent;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+  }*/
+
+  div {
+    float: right;
+    height: 600px;
+    width: 300px;
+    border: 1px solid black;
+  }
+
 #score {
   border: 2px dotted black;
   height: 80px;
@@ -67,12 +130,41 @@ img {
   vertical-align: top;
 }
 
-#leaderboard {
-  height: 600px;
-  width: 300px;
-  border: 1px black solid;
-  float: right;
+#leaderboardTop {
+  width: 0;
+	height: 0;
+	border-left: 37.5px solid transparent;
+	border-right: 37.5px solid transparent;
+	border-bottom: 75px solid yellow;
+  margin-left: 112px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align: middle;
+}
+
+#leaderboardMiddle {
+	border-bottom: 75px solid red;
+	border-left: 37.5px solid transparent;
+	border-right: 37.5px solid transparent;
+	height: 0;
+	width: 75px;
   display: inline-block;
+  margin-left: 75px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  vertical-align: middle;
+}
+
+#leaderboardBottom {
+  border-bottom: 150px solid blue;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+  height: 0;
+  width: 150px;
+  display: inline-block;
+  margin-left: 0px;
+  margin-top: 0px;
+  vertical-align: middle;
 }
 
 .topWall {
