@@ -11,6 +11,7 @@ ul {
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 20px;
+  display: inline-block;
 }
 
 ul li {
@@ -21,23 +22,57 @@ ul li {
 }
 
 .bonus {
- background-color: blue;
+background-color: blue;
+}
+
+.used-bonus {
+  background-color: gray;
 }
 
 .win {
-  background-color: green;
+  /*background-color: green;*/
+  background-image: url("https://pbs.twimg.com/profile_images/616323696601468930/SkNd2ppU.png");
+  width: 20px;
+  height: 20px;
+}
+
+img {
+  height: 20px;
+  width: 20px;
 }
 
 .player {
-  background-color: yellow;
+  background-color: white;
+  width: 0px;
+ height: 0px;
+ border-right: 10px solid transparent;
+ border-top: 10px solid yellow;
+ border-left: 10px solid yellow;
+ border-bottom: 10px solid yellow ;
+ border-top-left-radius: 10px;
+ border-top-right-radius: 10px;
+ border-bottom-left-radius: 10px;
+ border-bottom-right-radius: 10px;
 }
 
-p {
+#score {
   border: 2px dotted black;
   height: 80px;
   width: 100px;
   text-align: center;
-  text-decoration: underline;
+  font-weight: bold;
+  font-size: 25px;
+  font-family:'Indie Flower', cursive;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#leaderboard {
+  height: 600px;
+  width: 300px;
+  border: 1px black solid;
+  float: right;
+  display: inline-block;
 }
 
 .topWall {

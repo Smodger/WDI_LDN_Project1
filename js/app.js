@@ -3,26 +3,27 @@ $(function(){
   var $player = $('.player');
   var $tiles = $('li');
 
-
   var gridLength = 33;
-
-  var moves = 0; //move counter
-
 
   function movePlayer(keyboardEvent) {
     // console.log(keyboardEvent.keyCode);
+    // $player.removeClass("pacmanLeft").removeClass("pacmanRight").removeClass("pacmanUp").removeClass("pacmanDown");
     var index = $player.index();
     switch(keyboardEvent.keyCode) {
     case 38:
+    // $player.addClass("pacmanLeft");
       index -= gridLength;
       break;
     case 40:
+    // $player.addClass("pacmanRight");
       index += gridLength;
       break;
     case 37:
+    // $player.addClass("pacmanUp");
       index--;
       break;
     case 39:
+    // $player.addClass("pacmanDown");
       index++;
       break;
     }
@@ -31,14 +32,6 @@ $(function(){
     if($tiles.eq(index).hasClass('wall') || $tiles.eq(index).hasClass('topWall') || $tiles.eq(index).hasClass('bottomWall') || $tiles.eq(index).hasClass('leftWall') || $tiles.eq(index).hasClass('rightWall')) {
       return false;
     }
-    //BONUS
-  //   if ($tiles.eq(index).hasClass('points'));
-  //   function myScore() {
-  //     points += 10;
-  //     function display() {
-  //       $("#score").show();
-  //       $("#score").html("Score: " + totalScore);
-  // }
 
     //WIN
     if ($tiles.eq(index).hasClass('win')) {
@@ -48,29 +41,32 @@ $(function(){
     }
     $player.removeClass('player');
     $player = $tiles.eq(index).addClass('player');
+
+        //BONUS
+        if ($tiles.eq(index).hasClass('bonus')) {
+            points += 10;
+            $(".player").removeClass('bonus').addClass('used-bonus');
+        }
   }
 
   $(document).on('keydown', movePlayer);
 
-
-
-  //timer
-
   //Score
-  var points = 60;
+  var points = 20;
   var decrease = 1;
   var int;
 
-  function countDown(i, callback) {
-      callback = callback || function(){};
-      int = setInterval(function() {
-        $("#score").html("Score: " + i);
-          i-- || (clearInterval(int), callback());
-      }, 1000);
+  function countDown(callback) {
+    callback = callback || function(){};
+    int = setInterval(function() {
+      $("#score").html("Score: " + points);
+        points-- || (clearInterval(int), callback());
+    }, 1000);
   }
-      countDown(points, function(){
-          alert("Countdown done!");
-      });
+  countDown(function(){
+    alert("Time's up! Press OK to try again");
+      location.reload();
+  });
 
 
 });
