@@ -77,7 +77,7 @@ $(function(){
   }
   countDown(function(){
     alert("Time's up! Press OK to try again");
-      location.reload();
+    location.reload();
   });
 
 
