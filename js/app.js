@@ -6,25 +6,31 @@ $(function(){
   var gridLength = 33;
 
   function movePlayer(keyboardEvent) {
-    // console.log(keyboardEvent.keyCode);
-    // $player.removeClass("pacmanLeft").removeClass("pacmanRight").removeClass("pacmanUp").removeClass("pacmanDown");
+    var classToAdd;
+
+    //console.log(keyboardEvent.keyCode);
+    console.log('movePlayer: this:', this);
     var index = $player.index();
     switch(keyboardEvent.keyCode) {
     case 38:
-    // $player.addClass("pacmanLeft");
       index -= gridLength;
+      classToAdd = "pacmanUp";
+      // $tiles.eq(index).addClass("pacmanUp");
       break;
     case 40:
-    // $player.addClass("pacmanRight");
       index += gridLength;
+      classToAdd = "pacmanDown";
+      // $tiles.eq(index).addClass("pacmanDown");
       break;
     case 37:
-    // $player.addClass("pacmanUp");
       index--;
+      classToAdd = "pacmanLeft";
+      // $tiles.eq(index).addClass("pacmanLeft");
       break;
     case 39:
-    // $player.addClass("pacmanDown");
       index++;
+      classToAdd = "pacmanRight";
+      // $tiles.eq(index).addClass("pacmanRight");
       break;
     }
 
@@ -36,17 +42,23 @@ $(function(){
     //WIN
     if ($tiles.eq(index).hasClass('win')) {
       clearInterval(int);
-      alert("Congratulations you solved the maze!");
-      location.reload();
+      alert("Congratulations you completed the maze! But remember Pacman, your beauty is on the inside!");
+       location.reload();
     }
-    $player.removeClass('player');
-    $player = $tiles.eq(index).addClass('player');
+    $player.removeClass('pacmanUp pacmanDown pacmanLeft pacmanRight player');
+    // $player.removeClass();
+    // $player = $tiles.eq(index).addClass('player');
+    $player = $tiles.eq(index).addClass(classToAdd);
 
-        //BONUS
-        if ($tiles.eq(index).hasClass('bonus')) {
-            points += 10;
-            $(".player").removeClass('bonus').addClass('used-bonus');
-        }
+    //BONUS
+    if ($tiles.eq(index).hasClass('bonus')) {
+        points += 5;
+        $(".player").removeClass('bonus').addClass('used-bonus');
+        $(".pacmanUp").removeClass('bonus').addClass('used-bonus');
+        $(".pacmanDown").removeClass('bonus').addClass('used-bonus');
+        $(".pacmanLeft").removeClass('bonus').addClass('used-bonus');
+        $(".pacmanRight").removeClass('bonus').addClass('used-bonus');
+    }
   }
 
   $(document).on('keydown', movePlayer);

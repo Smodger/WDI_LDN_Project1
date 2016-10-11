@@ -1,3 +1,11 @@
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  font-family:'Audiowide', cursive;
+}
+
 #gameboard {
   /*background-color: blue;*/
   margin: auto;
@@ -8,10 +16,11 @@
 
 ul {
   list-style-type: none;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
   margin-top: 20px;
   display: inline-block;
+  padding-left: 0px;
 }
 
 ul li {
@@ -42,10 +51,9 @@ img {
 }
 
 .player {
-  background-color: white;
-  width: 0px;
+ width: 0px;
  height: 0px;
- border-right: 10px solid transparent;
+ border-right: 10px solid white;
  border-top: 10px solid yellow;
  border-left: 10px solid yellow;
  border-bottom: 10px solid yellow ;
@@ -55,7 +63,7 @@ img {
  border-bottom-right-radius: 10px;
 }
 
-/*.pacmanRight {
+.pacmanRight {
   background-color: white;
   width: 0px;
  height: 0px;
@@ -109,62 +117,102 @@ img {
    border-top-right-radius: 10px;
    border-bottom-left-radius: 10px;
    border-bottom-right-radius: 10px;
-  }*/
+  }
 
-  div {
+  #leaderboard {
     float: right;
-    height: 600px;
+    height: 200px;
     width: 300px;
-    border: 1px solid black;
+    border: 2px dashed rgb(97, 195, 255);
+    margin-right: 10px;
+    margin-left: 0px
+    padding: 0px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Audiowide', cursive;
   }
 
 #score {
   border: 2px dotted black;
-  height: 80px;
+  height: 60px;
   width: 100px;
   text-align: center;
   font-weight: bold;
   font-size: 25px;
-  font-family:'Indie Flower', cursive;
+  font-family:'Audiowide', cursive;
   display: inline-block;
   vertical-align: top;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.instructions {
+  float: right;
+  height: 280px;
+  width: 300px;
+  border: 2px dashed rgb(97, 195, 255);
+  margin-right: 0px;
+  margin-top: 0px;
+  padding: 0px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Audiowide', cursive;
 }
 
 #leaderboardTop {
-  width: 0;
+  /*width: 0;
 	height: 0;
-	border-left: 37.5px solid transparent;
-	border-right: 37.5px solid transparent;
-	border-bottom: 75px solid yellow;
-  margin-left: 112px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  vertical-align: middle;
-}
-
-#leaderboardMiddle {
-	border-bottom: 75px solid red;
-	border-left: 37.5px solid transparent;
-	border-right: 37.5px solid transparent;
-	height: 0;
-	width: 75px;
-  display: inline-block;
-  margin-left: 75px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  vertical-align: middle;
-}
-
-#leaderboardBottom {
-  border-bottom: 150px solid blue;
-  border-left: 75px solid transparent;
-  border-right: 75px solid transparent;
-  height: 0;
-  width: 150px;
-  display: inline-block;
+	border-left: 45px solid transparent;
+	border-right: 45px solid transparent;
+	border-bottom: 70px solid rgb(173, 255, 255);*/
   margin-left: 0px;
   margin-top: 0px;
+  margin-bottom: 10px;
   vertical-align: middle;
+  text-align: center;
+}
+
+#leaderboardFirst {
+	border-bottom: 50px solid rgb(148, 246, 255);
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	height: 0;
+	width: 90px;
+  display: inline-block;
+  /*margin-left: 60px;*/
+  margin-bottom: 0px;
+  margin-top: 0px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#leaderboardSecond {
+  border-bottom: 55px solid rgb(122, 220, 255);
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  height: 0;
+  width: 140px;
+  display: inline-block;
+  /*margin-left: 30px;*/
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align: middle;
+  text-align: center;
+
+}
+
+#leaderboardThird {
+  border-bottom: 55px solid rgb(97, 195, 255);
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  height: 0;
+  width: 200px;
+  display: inline-block;
+  /*margin-left: 0px;*/
+  margin-top: 0px;
+  margin-bottom: 50px;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .topWall {
