@@ -2,8 +2,13 @@ $(function(){
 
   var $player = $('.player');
   var $tiles = $('li');
-
   var gridLength = 33;
+
+  $(function(){
+  $('button').on("click", function() {
+    $("#gameboard").show();
+    });
+  });
 
   function movePlayer(keyboardEvent) {
     var classToAdd;
@@ -52,7 +57,7 @@ $(function(){
 
     //BONUS
     if ($tiles.eq(index).hasClass('bonus')) {
-        points += 5;
+        points += 3;
         $(".player").removeClass('bonus').addClass('used-bonus');
         $(".pacmanUp").removeClass('bonus').addClass('used-bonus');
         $(".pacmanDown").removeClass('bonus').addClass('used-bonus');
@@ -68,17 +73,18 @@ $(function(){
   var decrease = 1;
   var int;
 
-  function countDown(callback) {
-    callback = callback || function(){};
-    int = setInterval(function() {
-      $("#score").html("Score: " + points);
-        points-- || (clearInterval(int), callback());
+  $('button').on("click", function() {
+    function countDown(callback) {
+      callback = callback || function(){};
+      int = setInterval(function() {
+        $("#score").html("Score: " + points);
+          points-- || (clearInterval(int), callback());
     }, 1000);
   }
   countDown(function(){
     alert("Time's up! Press OK to try again");
     location.reload();
   });
-
+});
 
 });
